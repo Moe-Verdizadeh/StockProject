@@ -1,9 +1,24 @@
-const express = require('express');
-const router = express.Router();  
-var getTweet = require('../public/js/getTweet'); 
+const express = require('express'); 
+const router = express.Router();   
+var Twit = require('twit');
+var config = require('../public/js/config');  
+var T = new Twit(config);
 
-router.get('/', (req, res) => {
-    res.render( 'index', { tweet: getTweet.gettingTweets()} );
+router.get('/', async (req, res) => {
+    param = {
+        q: '$ebon',
+        count: 10,
+    };
+
+    let tweets;
+
+    T.get('search/tweets', param)
+    .then(result => {
+        console.log('got data in routes index.js');
+        console.log(result.data.statuses);
+        res.render('index', { tweets: result.data.statuses });
+    })
+    .catch(err => console.log(err));
 })  
 
 router.get('/about', (req, res) => {

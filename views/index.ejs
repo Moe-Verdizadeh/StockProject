@@ -2,13 +2,17 @@
 <div class="row p-5">
     <div class="col">
 
-    </div>
-    <div class="col card text-center">
-        <div class="card-body p-4">
-            <h5 class="card-title">Title Or Name </h5>    
-            <p class="card-text"><%- {tweet: tweet}%></p> 
-        </div>
-    </div>
+    </div> 
+    <% if(tweets) { %>
+        <% tweets.forEach(tweet => { %>
+            <div class="col card text-center">
+                <div class="card-body p-4">
+                    <h5 class="card-title"> <%= tweet.user.screen_name %> </h5>
+                    <p class="card-text" id="tweetContent"><%= tweet.text %></p>
+                </div>
+            </div>
+        <% }); %>
+    <% } %> 
     <div class="col">
 
     </div>
