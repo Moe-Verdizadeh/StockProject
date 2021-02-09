@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     T.get('search/tweets', param)
     .then(result => {
         console.log('got data in routes index.js');
-        //console.log(result.data);
+        console.log(result.data.statuses);
         res.render('index', { tweets: result.data.statuses });
     })
     .catch(err => console.log(err));
