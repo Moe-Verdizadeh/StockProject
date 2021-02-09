@@ -2,6 +2,7 @@ var Twit = require('twit');
 var config = require('./config');  
 var T = new Twit(config);
  
+ 
 
 console.log("Starting up...");
 
@@ -22,25 +23,17 @@ function gettingTweets(){
         tweets.forEach(loopingTweets); 
         function loopingTweets(eachTweets, index) { 
             tweetList = eachTweets.text;
-            console.log( 'Tweet ' + (index + 1 ) + ':', tweetList);
-            var elem = document.querySelector('#tweetContent');
-            elem.innerHTML = ( 'Tweet ' + (index + 1 ) + ':', eachTweets.text ); 
-        }   
-
-        // for (tweetLists in tweetList){
-        //     console.log( 'Tweet ' , tweetLists);
+            console.log( 'Tweet ' + (index + 1 ) + ':', tweetList);  
+        }     
+        // for (i = 0; 1 <= tweetList.length; i++){
+        //     tweetList[i];
+        //     console.log('tweetList', tweetList)
         // }
-
-        // for (i = 0; i < tweetList.length; i++ ){
-        //     // var elem = document.getElementById('tweetContent');
-        //     // elem.innerHTML = (index,   tweetList[i]);
-        //     console.log( 'Tweet: ', tweetList[i]);
-        // }
-        // document.getElementById('tweetContent').innerHTML = (index,   tweetList);
-        // document.getElementsByClassName('.tweetContent').innerHTML
-
+        
     }  
 }
 
 module.exports = { gettingTweets }
- 
+
+// var elem = window.document.querySelector('#tweetContent');
+// elem.innerHTML = ( 'Tweet ' + (index + 1 ) + ':', eachTweets.text ); 
