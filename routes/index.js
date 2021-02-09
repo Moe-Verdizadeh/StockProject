@@ -1,6 +1,5 @@
 const express = require('express');
-const router = express.Router();  
-//const { gettingTweets } = require('../public/js/getTweet');
+const router = express.Router();   
 var Twit = require('twit');
 var config = require('../public/js/config');  
 var T = new Twit(config);
@@ -12,7 +11,7 @@ router.get('/', async (req, res) => {
     };
 
     let tweets;
-    
+
     T.get('search/tweets', param)
     .then(result => {
         console.log('got data in routes index.js');
@@ -21,7 +20,6 @@ router.get('/', async (req, res) => {
     })
     .catch(err => console.log(err));
 }) 
-
 
 router.get('/about', (req, res) => {
     res.render('about');
