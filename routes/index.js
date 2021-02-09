@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); 
 const router = express.Router();   
 var Twit = require('twit');
 var config = require('../public/js/config');  
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         res.render('index', { tweets: result.data.statuses });
     })
     .catch(err => console.log(err));
-}) 
+})  
 
 router.get('/about', (req, res) => {
     res.render('about');

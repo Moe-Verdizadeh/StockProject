@@ -2,6 +2,7 @@ var Twit = require('twit');
 var config = require('./config');  
 var T = new Twit(config);
  
+ 
 
 console.log("Starting up...");
 
@@ -26,4 +27,6 @@ function gettingTweets(){
 }
 
 module.exports = { gettingTweets }
- 
+
+// var elem = window.document.querySelector('#tweetContent');
+// elem.innerHTML = ( 'Tweet ' + (index + 1 ) + ':', eachTweets.text ); 
