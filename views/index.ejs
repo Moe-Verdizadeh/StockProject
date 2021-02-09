@@ -6,7 +6,13 @@
     <div class="col card text-center">
         <div class="card-body p-4">
             <h5 class="card-title">Title Or Name </h5>
-            <p class="card-text" id="tweetContent">Content of the Tweet</p> 
+            <p class="card-text" id="tweetContent">Content of the Tweet</p>
+            <% if(tweets) { %>
+                <% tweets.forEach(tweet => { %>
+                    <h1><%= tweet.text %></h1>
+                    <hr />
+                <% }); %>
+            <% } %>
         </div>
     </div>
     <div class="col">
