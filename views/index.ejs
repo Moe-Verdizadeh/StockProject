@@ -1,7 +1,7 @@
 
 <div class="offset-8 col-4 pt-2 sticky-top">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Start Typing" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" class="form-control" name="searchInput" placeholder="Start Typing">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
     </div>
 </div>
@@ -18,7 +18,7 @@
                         <h5 class="card-title"> @<%= tweet.user.screen_name %> </h5>
                         <hr style="width: 50%; margin-left: 25%;">
                         <p class="card-text" id="tweetContent"><%= tweet.text %></p> 
-                        <p class="card-text" id="tweetContent">Retweets <%= tweet.retweet_count %></p>  
+                        <p>Retweets <span class="badge bg-primary"><%= tweet.retweet_count %></span></p>
                     </div>
                 </div>
             <% }); %>
