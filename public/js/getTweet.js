@@ -9,7 +9,7 @@ async function gettingTweets(){
 
     param = {
         q: '$ebon',
-        count: 10,
+        count: 20,
     };
 
     let tweets = await T.get('search/tweets', param);
