@@ -7,16 +7,15 @@ router.get('/', async (req, res) => {
         q: '$ebon',
         count: 10,
     };
+    let theTweets = await gettingTweets();
+
+    res.render('index', { tweets: theTweets });
 
     // gettingTweets()
     // .then(theTweets => {
     //     res.render('index', { tweets: theTweets });
     // })
     // .catch(err => console.log(err));
-
-    let theTweets = await gettingTweets();
-
-    res.render('index', { tweets: theTweets });
 
     // T.get('search/tweets', param)
     // .then(result => {
