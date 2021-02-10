@@ -3,16 +3,19 @@
     <div class="col">
 
     </div> 
-    <% if(tweets) { %>
-        <% tweets.forEach(tweet => { %>
-            <div class="col card text-center">
-                <div class="card-body p-4">
-                    <h5 class="card-title"> <%= tweet.user.screen_name %> </h5>
-                    <p class="card-text" id="tweetContent"><%= tweet.text %></p>
+    <div class="col">
+        <% if(tweets) { %>
+            <% tweets.forEach(tweet => { %>
+                <div class="col card text-center">
+                    <div class="card-body p-4">
+                        <h5 class="card-title"> @<%= tweet.user.screen_name %> </h5>
+                        <hr style="width: 50%; margin-left: 25%;">
+                        <p class="card-text" id="tweetContent"><%= tweet.text %></p>
+                    </div>
                 </div>
-            </div>
-        <% }); %>
-    <% } %> 
+            <% }); %>
+        <% } %> 
+    </div>
     <div class="col">
 
     </div>
