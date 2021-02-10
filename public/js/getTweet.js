@@ -7,7 +7,7 @@ var T = new Twit(config);
 console.log("Starting up...");
 
 
-function gettingTweets(){
+async function gettingTweets(){
     console.log("Searching Tweets"); 
 
     param = {
@@ -15,15 +15,19 @@ function gettingTweets(){
         count: 10,
     };
 
-    let tweets;
-    
-    T.get('search/tweets', param)
-    .then(data => {
-        console.log('got data');
-        tweets = data;
-        return data;
-    })
-    .catch(err => console.log(err));
+    let tweets = await T.get('search/tweets', param);
+
+    //console.log(tweets);
+
+    return tweets.data.statuses;
+
+    // T.get('search/tweets', param)
+    // .then(result => {
+    //     console.log('got data');
+    //     console.log(result);
+    //     return result.data.statuses;
+    // })
+    // .catch(err => console.log(err));
 }
 
 module.exports = { gettingTweets }
