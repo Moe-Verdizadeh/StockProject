@@ -2,13 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { gettingTweets } = require('../public/js/getTweet');
 
-router.get('/', async (req, res) => {
-    param = {
-        q: '$ebon',
-        count: 10,
-    };
-    let theTweets = await gettingTweets();
-
+router.get('/', async (req, res) => {  
+    let theTweets = await gettingTweets();  
     res.render('index', { tweets: theTweets });
 
     // gettingTweets()

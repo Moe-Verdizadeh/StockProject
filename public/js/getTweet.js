@@ -14,7 +14,7 @@ async function gettingTweets(){
 
     let tweets = await T.get('search/tweets', param);
 
-    //console.log(tweets);
+    // console.log(tweets.data.statuses);
 
     return tweets.data.statuses;
 
@@ -24,7 +24,7 @@ async function gettingTweets(){
     //     console.log(result);
     //     return result.data.statuses;
     // })
-    // .catch(err => console.log(err));
-}
+    // .catch(err => console.log(err)); 
+}  
 
 module.exports = { gettingTweets } 
