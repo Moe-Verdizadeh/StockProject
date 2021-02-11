@@ -15,5 +15,8 @@ app.use(express.static('public'));
 app.use('/', indexRouter);
 app.use('/about', indexRouter);
 
+// app.get('*', (req,res) => {
+//     res.sendFile(path.join(__dirname + "/client/build/index.html"));
+// });
  
 app.listen(process.env.PORT || 8000);
