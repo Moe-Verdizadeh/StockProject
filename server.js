@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 
@@ -8,20 +8,16 @@ const expressLayouts =  require("express-ejs-layouts");
 
 const indexRouter = require('./routes/index');  
 
-const mongoURL = 'mongodb+srv://mokode:TeddyMo3@twitterdb.bcxkk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+// const mongoURL = 'mongodb+srv://mokode:TeddyMo3@twitterdb.bcxkk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 // mongoose.connect(mongoURL , {
 //     useNewUrlParser: true,
 //     // useUnifiedTopology: true
-// });
-mongoose.connect(mongoURL, { 
-    useNewUrlParser: true
-}).catch(err =>console.error(`ERROR: ${err}`));
-//end mangoose
+// }); 
 
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose is Connected!'); 
-})
+// mongoose.connection.on('connected', () => {
+//     console.log('Mongoose is Connected!'); 
+// })
 
 app.use(morgan('tiny')); 
 
